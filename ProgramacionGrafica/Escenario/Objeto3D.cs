@@ -63,5 +63,9 @@ namespace ConsoleApp5
             }
         }
 
+        public Dictionary<string, Face> GetListaDeCaras()
+        {
+            return this.listaDeCaras;
+        }
     }
 }

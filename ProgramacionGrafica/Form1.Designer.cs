@@ -40,13 +40,13 @@ namespace ProgramacionGrafica
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.Escenario1 = new System.Windows.Forms.CheckBox();
-            this.Escenario2 = new System.Windows.Forms.CheckBox();
+            this.ObjetosComboBox = new System.Windows.Forms.ComboBox();
+            this.FaceComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(72, 115);
+            this.button1.Location = new System.Drawing.Point(10, 143);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -56,7 +56,7 @@ namespace ProgramacionGrafica
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(174, 115);
+            this.button2.Location = new System.Drawing.Point(112, 143);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -66,7 +66,7 @@ namespace ProgramacionGrafica
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(279, 115);
+            this.button3.Location = new System.Drawing.Point(217, 143);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 1;
@@ -76,7 +76,7 @@ namespace ProgramacionGrafica
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(148, 74);
+            this.textBox1.Location = new System.Drawing.Point(86, 102);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(27, 20);
             this.textBox1.TabIndex = 2;
@@ -85,7 +85,7 @@ namespace ProgramacionGrafica
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(127, 77);
+            this.label1.Location = new System.Drawing.Point(65, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 3;
@@ -94,7 +94,7 @@ namespace ProgramacionGrafica
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(189, 77);
+            this.label2.Location = new System.Drawing.Point(127, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 13);
             this.label2.TabIndex = 3;
@@ -103,7 +103,7 @@ namespace ProgramacionGrafica
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(245, 77);
+            this.label3.Location = new System.Drawing.Point(183, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(20, 13);
             this.label3.TabIndex = 3;
@@ -111,7 +111,7 @@ namespace ProgramacionGrafica
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(209, 74);
+            this.textBox2.Location = new System.Drawing.Point(147, 102);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(27, 20);
             this.textBox2.TabIndex = 2;
@@ -119,37 +119,34 @@ namespace ProgramacionGrafica
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(266, 74);
+            this.textBox3.Location = new System.Drawing.Point(204, 102);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(27, 20);
             this.textBox3.TabIndex = 2;
             this.textBox3.Text = "1";
             // 
-            // Escenario1
+            // ObjetosComboBox
             // 
-            this.Escenario1.AutoSize = true;
-            this.Escenario1.Location = new System.Drawing.Point(22, 29);
-            this.Escenario1.Name = "Escenario1";
-            this.Escenario1.Size = new System.Drawing.Size(79, 17);
-            this.Escenario1.TabIndex = 4;
-            this.Escenario1.Text = "Escenario1";
-            this.Escenario1.UseVisualStyleBackColor = true;
+            this.ObjetosComboBox.FormattingEnabled = true;
+            this.ObjetosComboBox.Location = new System.Drawing.Point(98, 19);
+            this.ObjetosComboBox.Name = "ObjetosComboBox";
+            this.ObjetosComboBox.Size = new System.Drawing.Size(121, 21);
+            this.ObjetosComboBox.TabIndex = 5;
+            this.ObjetosComboBox.SelectedIndexChanged += new System.EventHandler(this.ObjetosComboBox_SelectedIndexChanged);
             // 
-            // Escenario2
+            // FaceComboBox
             // 
-            this.Escenario2.AutoSize = true;
-            this.Escenario2.Location = new System.Drawing.Point(297, 29);
-            this.Escenario2.Name = "Escenario2";
-            this.Escenario2.Size = new System.Drawing.Size(79, 17);
-            this.Escenario2.TabIndex = 4;
-            this.Escenario2.Text = "Escenario2";
-            this.Escenario2.UseVisualStyleBackColor = true;
+            this.FaceComboBox.FormattingEnabled = true;
+            this.FaceComboBox.Location = new System.Drawing.Point(98, 57);
+            this.FaceComboBox.Name = "FaceComboBox";
+            this.FaceComboBox.Size = new System.Drawing.Size(121, 21);
+            this.FaceComboBox.TabIndex = 6;
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(425, 261);
-            this.Controls.Add(this.Escenario2);
-            this.Controls.Add(this.Escenario1);
+            this.ClientSize = new System.Drawing.Size(316, 182);
+            this.Controls.Add(this.FaceComboBox);
+            this.Controls.Add(this.ObjetosComboBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -177,8 +174,8 @@ namespace ProgramacionGrafica
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.CheckBox Escenario1;
-        private System.Windows.Forms.CheckBox Escenario2;
+        private System.Windows.Forms.ComboBox ObjetosComboBox;
+        private System.Windows.Forms.ComboBox FaceComboBox;
     }
 }
 
