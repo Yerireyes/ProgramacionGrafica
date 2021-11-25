@@ -15,6 +15,10 @@ namespace ConsoleApp5
         public Game(int width, int height, string title) : base(width, height, GraphicsMode.Default, title) { }
         public HelloEscenario escenario;
         public HelloEscenario escenario2;
+        public int transformacion = 0;
+        public float x;
+        public float y;
+        public float z;
 
         protected override void OnLoad(EventArgs e)
         {
@@ -36,10 +40,25 @@ namespace ConsoleApp5
             GL.Enable(EnableCap.DepthTest);
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.MatrixMode(MatrixMode.Modelview);
+            switch (transformacion)
+            {
+                case 1:
+                    GL.Rotate(3, x, y, z);
+                    transformacion = 0;
+                    break;
+
+                case 2:
+                    GL.Translate( x, y, z);
+                    transformacion = 0;
+                    break;
+
+                case 3:
+                    GL.Scale((double) x, (double) y, (double) z);
+                    transformacion = 0;
+                    break;
+            }
             escenario.Dibujar();
-            //escenario.Rotar(0, 1, 0);
-            //escenario.Obtener("cubo").Obtener("cara4").Rotar(1, 1, 0);
-            //escenario2.Dibujar();
+            
             SwapBuffers();
             base.OnRenderFrame(e);
         }

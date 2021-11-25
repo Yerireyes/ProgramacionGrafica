@@ -51,7 +51,6 @@ namespace ConsoleApp5
 
             }
             GL.End();
-
         }
 
         public void Rotar(float anguloX, float anguloY, float anguloZ)

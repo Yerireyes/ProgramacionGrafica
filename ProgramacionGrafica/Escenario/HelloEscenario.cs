@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using OpenTK.Graphics.OpenGL;
 namespace ConsoleApp5
 {
     class HelloEscenario
@@ -68,6 +68,7 @@ namespace ConsoleApp5
             {
                 objeto3D.Value.Rotar(x, y, z);
             }
+
         }
 
         public void Trasladar(float x, float y, float z)
@@ -77,7 +78,7 @@ namespace ConsoleApp5
                 objeto3D.Value.Trasladar(x, y, z);
             }
         }
-
+        
         public void Escalado(float x, float y, float z)
         {
             foreach (var objeto3D in listaDeObjetos3D)
