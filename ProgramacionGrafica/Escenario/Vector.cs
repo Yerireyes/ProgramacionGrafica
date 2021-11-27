@@ -33,5 +33,7 @@ namespace ConsoleApp5
             a.X * b.M31 + a.Y * b.M32 + a.Z * b.M33);
 
         public static Vector operator +(Vector a, Vector b) => new Vector(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
+
+        public static Vector operator *(Vector a, Vector b) => new Vector(a.X * b.X, a.Y * b.Y, a.Z * b.Z);
     }
 }

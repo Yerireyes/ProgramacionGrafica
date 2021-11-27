@@ -15,16 +15,19 @@ namespace ConsoleApp5
         {
             this.listaDeObjetos3D = listaDeObjetos3D;
             this.centro = centro;
-            foreach (var objeto3D in listaDeObjetos3D)
-            {
-                Vector newCentro = new Vector(objeto3D.Value.centro.X + this.centro.X, objeto3D.Value.centro.Y + this.centro.Y, objeto3D.Value.centro.Z + this.centro.Z);
-                objeto3D.Value.centro = newCentro;
-                foreach (var cara in objeto3D.Value.listaDeCaras)
-                {
-                    Vector newCentroCara = new Vector(cara.Value.centro.X + newCentro.X, cara.Value.centro.Y + newCentro.Y, cara.Value.centro.Z + newCentro.Z);
-                    cara.Value.centro = newCentroCara;
+            //foreach (var objeto3D in listaDeObjetos3D)
+            //{
+            //    foreach (var cara in objeto3D.Value.listaDeCaras)
+            //    {
+            //        Vector newCentroCara = new Vector(cara.Value.centro.X + centro.X, cara.Value.centro.Y + centro.Y, cara.Value.centro.Z + centro.Z);
+            //        cara.Value.centro = newCentroCara;
 
-                }
+            //    }
+            //}
+            foreach (var objeto3d in listaDeObjetos3D)
+            {
+                Vector newCentro = objeto3d.Value.centro + centro;
+                objeto3d.Value.centro = newCentro;
             }
         }
 
@@ -38,11 +41,9 @@ namespace ConsoleApp5
         public void Add(string key, Objeto3D objeto)
         {
             listaDeObjetos3D.Add(key, objeto);
-            Vector newCentro = new Vector(objeto.centro.X + this.centro.X, objeto.centro.Y + this.centro.Y, objeto.centro.Z + this.centro.Z);
-            objeto.centro = newCentro;
                 foreach (var cara in objeto.listaDeCaras)
                 {
-                    Vector newCentroCara = new Vector(cara.Value.centro.X + newCentro.X, cara.Value.centro.Y + newCentro.Y, cara.Value.centro.Z + newCentro.Z);
+                    Vector newCentroCara = new Vector(cara.Value.centro.X + centro.X, cara.Value.centro.Y + centro.Y, cara.Value.centro.Z + centro.Z);
                     cara.Value.centro = newCentroCara;
 
                 }

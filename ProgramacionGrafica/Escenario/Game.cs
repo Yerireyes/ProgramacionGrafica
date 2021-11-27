@@ -43,7 +43,9 @@ namespace ConsoleApp5
             switch (transformacion)
             {
                 case 1:
-                    GL.Rotate(3, x, y, z);
+                    GL.Rotate(x, 1, 0, 0);
+                    GL.Rotate(y, 0, 1, 0);
+                    GL.Rotate(z, 0, 0, 1);
                     transformacion = 0;
                     break;
 

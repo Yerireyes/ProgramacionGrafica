@@ -27,37 +27,37 @@ namespace ProgramacionGrafica
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            escenario = new HelloEscenario(new Vector(-200, -100, 0));
+            escenario = new HelloEscenario(new Vector(100, 100, 0));
             Dictionary<string, Vector> caraFrente = new Dictionary<string, Vector>();
             caraFrente.Add("vector1", new Vector(-25, -25, 0));
             caraFrente.Add("vector2", new Vector(25, -25, 0));
             caraFrente.Add("vector3", new Vector(25, 25, 0));
             caraFrente.Add("vector4", new Vector(-25, 25, 0));
             Dictionary<string, Vector> caraArriba = new Dictionary<string, Vector>();
-            caraArriba.Add("vector1", new Vector(-25, 0, -25));
-            caraArriba.Add("vector2", new Vector(25, 0, -25));
-            caraArriba.Add("vector3", new Vector(25, 0, 25));
-            caraArriba.Add("vector4", new Vector(-25, 0, 25));
+            caraArriba.Add("vector5", new Vector(-25, 0, -25));
+            caraArriba.Add("vector6", new Vector(25, 0, -25));
+            caraArriba.Add("vector7", new Vector(25, 0, 25));
+            caraArriba.Add("vector8", new Vector(-25, 0, 25));
             Dictionary<string, Vector> caraAtras = new Dictionary<string, Vector>();
-            caraAtras.Add("vector1", new Vector(-25, -25, 0));
-            caraAtras.Add("vector2", new Vector(25, -25, 0));
-            caraAtras.Add("vector3", new Vector(25, 25, 0));
-            caraAtras.Add("vector4", new Vector(-25, 25, 0));
+            caraAtras.Add("vector9", new Vector(-25, -25, 0));
+            caraAtras.Add("vector10", new Vector(25, -25, 0));
+            caraAtras.Add("vector11", new Vector(25, 25, 0));
+            caraAtras.Add("vector12", new Vector(-25, 25, 0));
             Dictionary<string, Vector> caraAbajo = new Dictionary<string, Vector>();
-            caraAbajo.Add("vector1", new Vector(-25, 0, -25));
-            caraAbajo.Add("vector2", new Vector(25, 0, -25));
-            caraAbajo.Add("vector3", new Vector(25, 0, 25));
-            caraAbajo.Add("vector4", new Vector(-25, 0, 25));
+            caraAbajo.Add("vector13", new Vector(-25, 0, -25));
+            caraAbajo.Add("vector14", new Vector(25, 0, -25));
+            caraAbajo.Add("vector15", new Vector(25, 0, 25));
+            caraAbajo.Add("vector16", new Vector(-25, 0, 25));
             Dictionary<string, Vector> caraDerecha = new Dictionary<string, Vector>();
-            caraDerecha.Add("vector1", new Vector(0, -25, -25));
-            caraDerecha.Add("vector2", new Vector(0, -25, 25));
-            caraDerecha.Add("vector3", new Vector(0, 25, 25));
-            caraDerecha.Add("vector4", new Vector(0, 25, -25));
+            caraDerecha.Add("vector17", new Vector(0, -25, -25));
+            caraDerecha.Add("vector18", new Vector(0, -25, 25));
+            caraDerecha.Add("vector19", new Vector(0, 25, 25));
+            caraDerecha.Add("vector20", new Vector(0, 25, -25));
             Dictionary<string, Vector> caraIzquierda = new Dictionary<string, Vector>();
-            caraIzquierda.Add("vector1", new Vector(0, -25, -25));
-            caraIzquierda.Add("vector2", new Vector(0, -25, 25));
-            caraIzquierda.Add("vector3", new Vector(0, 25, 25));
-            caraIzquierda.Add("vector4", new Vector(0, 25, -25));
+            caraIzquierda.Add("vector21", new Vector(0, -25, -25));
+            caraIzquierda.Add("vector22", new Vector(0, -25, 25));
+            caraIzquierda.Add("vector23", new Vector(0, 25, 25));
+            caraIzquierda.Add("vector24", new Vector(0, 25, -25));
 
             Face caraCuboFrente = new Face(caraFrente, Color.Green, new Vector(0, 0, -25));
             Face caraCuboArriba = new Face(caraArriba, Color.Red, new Vector(0, 25, 0));
