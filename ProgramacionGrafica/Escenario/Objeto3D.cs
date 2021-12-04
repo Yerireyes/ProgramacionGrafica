@@ -12,20 +12,20 @@ namespace ConsoleApp5
     {
         public Dictionary<string, Face> listaDeCaras { get; set; }
         public Vector centro { get; set; }
-        public Vector centroCopia;
-        public Vector centroLimpiar;
+        public Vector centroCopia { get; set; }
+        public Vector centroLimpiar { get; set; }
         public Objeto3D(Dictionary<string, Face> listaDeCaras, Vector centro)
         {
             this.listaDeCaras = listaDeCaras;
             this.centro = centro;
             centroCopia = centro;
             centroLimpiar = centro;
-            foreach (var cara in listaDeCaras)
-            {
-                Vector newCentro = this.centro + cara.Value.centro;
-                cara.Value.centro = newCentro;
-                cara.Value.centroLimpiar = this.centroLimpiar + cara.Value.centroLimpiar;
-            }
+            //foreach (var cara in listaDeCaras)
+            //{
+            //    Vector newCentro = this.centro + cara.Value.centro;
+            //    cara.Value.centro = newCentro;
+            //    cara.Value.centroLimpiar = this.centro + cara.Value.centroLimpiar;
+            //}
             //setNuevoCentro(this.centro);
         }
 

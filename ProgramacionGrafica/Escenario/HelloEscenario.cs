@@ -10,8 +10,8 @@ namespace ConsoleApp5
     {
         public Dictionary<string, Objeto3D> listaDeObjetos3D { get; set; }
         public Vector centro { get; set; }
-        public Vector centroCopia;
-        public Vector centroLimpiar;
+        public Vector centroCopia { get; set; }
+        public Vector centroLimpiar { get; set; }
 
         public HelloEscenario(Dictionary<string, Objeto3D> listaDeObjetos3D, Vector centro)
         {
