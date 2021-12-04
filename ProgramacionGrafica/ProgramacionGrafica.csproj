@@ -52,12 +52,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Escenario\Accion.cs" />
     <Compile Include="Escenario\CargadorJson.cs" />
+    <Compile Include="Escenario\Escena.cs" />
     <Compile Include="Escenario\Face.cs" />
     <Compile Include="Escenario\Game.cs" />
+    <Compile Include="Escenario\Guion.cs" />
+    <Compile Include="Escenario\GuionController.cs" />
     <Compile Include="Escenario\HelloEscenario.cs" />
     <Compile Include="Escenario\Objeto3D.cs" />
     <Compile Include="Escenario\Program.cs" />
+    <Compile Include="Escenario\Transformacion.cs" />
     <Compile Include="Escenario\Vector.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -79,6 +84,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Objetos\cubo.json" />
+    <None Include="Objetos\cubo2.json" />
     <None Include="Objetos\prueba.json" />
     <None Include="Objetos\prueba1.json" />
     <None Include="OpenTK.dll.config" />

@@ -12,17 +12,33 @@ namespace ConsoleApp5
     {
         public Dictionary<string, Face> listaDeCaras { get; set; }
         public Vector centro { get; set; }
+        public Vector centroCopia;
+        public Vector centroLimpiar;
         public Objeto3D(Dictionary<string, Face> listaDeCaras, Vector centro)
         {
             this.listaDeCaras = listaDeCaras;
             this.centro = centro;
+            centroCopia = centro;
+            centroLimpiar = centro;
             foreach (var cara in listaDeCaras)
             {
-                Vector newCentro = new Vector(centro.X + cara.Value.centro.X, centro.Y + cara.Value.centro.Y, centro.Z + cara.Value.centro.Z);
+                Vector newCentro = this.centro + cara.Value.centro;
                 cara.Value.centro = newCentro;
+                cara.Value.centroLimpiar = this.centroLimpiar + cara.Value.centroLimpiar;
+            }
+            //setNuevoCentro(this.centro);
+        }
+
+        public void setNuevoCentro(Vector nuevoCentro)
+        {
+            this.centro = nuevoCentro;
+            foreach (var cara in listaDeCaras)
+            {
+                Vector nuevoCentroCara = nuevoCentro + cara.Value.centro;
+                cara.Value.centro = nuevoCentroCara;
             }
         }
-        
+
         public void Insertar(Face nuevaCara, string key)
         {
             listaDeCaras.Add(key, nuevaCara);
@@ -40,21 +56,34 @@ namespace ConsoleApp5
 
         public void Dibujar()
         {
-            
+ 
             foreach (var face in this.listaDeCaras)
             {
                 face.Value.Dibujar();
             }
-          
+
         }
-        
+
         public void Rotar(float x, float y, float z)
         {
             foreach (var face in this.listaDeCaras)
             {
-                face.Value.Rotar(x, y, z);
+                face.Value.RotarObjeto(x, y, z, centroCopia);
             }
+            
+        }
 
+        public void RotarEscenario(float x, float y, float z, Vector centro)
+        {
+            foreach (var face in this.listaDeCaras)
+            {
+                face.Value.RotarEscenario(x, y, z, centroCopia);
+            }
+            x = MathHelper.DegreesToRadians(x);
+            y = MathHelper.DegreesToRadians(y);
+            z = MathHelper.DegreesToRadians(z);
+            Matrix3 matrizRotacion = Matrix3.CreateRotationX(x) * Matrix3.CreateRotationY(y) * Matrix3.CreateRotationZ(z);
+            centroCopia = centroCopia * matrizRotacion;
         }
 
         public void Trasladar(float x, float y, float z)
@@ -63,19 +92,38 @@ namespace ConsoleApp5
             {
                 face.Value.Trasladar(x, y, z);
             }
+            centroCopia = centroCopia + new Vector(x, y, z);
         }
 
         public void Escalado(float x, float y, float z)
         {
             foreach (var face in this.listaDeCaras)
             {
-                face.Value.Escalado(x, y, z);
+                face.Value.EscaladoObjeto(x, y, z, centroCopia);
             }
+        }
+
+        public void EscaladoEscenario(float x, float y, float z, Vector centro)
+        {
+            foreach (var face in this.listaDeCaras)
+            {
+                face.Value.EscaladoEscenario(x, y, z, centroCopia);
+            }
+            centroCopia = centroCopia * Matrix3.CreateScale(x, y, z);
         }
 
         public Dictionary<string, Face> GetListaDeCaras()
         {
             return this.listaDeCaras;
+        }
+
+        public void Limpiar()
+        {
+            foreach (var cara in listaDeCaras)
+            {
+                cara.Value.Limpiar();
+            }
+            this.centroCopia = this.centroLimpiar;
         }
     }
 }
